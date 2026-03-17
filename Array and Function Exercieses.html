@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Task - Array and Function Questions</title>
+</head>
+
+<body>
+    <p id="q1"></p>
+    <p id="q2"></p>
+    <p id="q3"></p>
+    <p id="q4"></p>
+    <p id="q5"></p>
+    <p id="q6"></p>
+    <p id="q7"></p>
+    <p id="q8"></p>
+    <p id="q9"></p>
+    <p id="q10"></p>
+    <p id="q11"></p>
+    <p id="q12"></p>
+    <p id="q13"></p>
+    <p id="q14"></p>
+    <p id="q15"></p>
+    <p id="q16"></p>
+    <p id="q17"></p>
+    <p id="q18"></p>
+    <p id="q19"></p>
+    <p id="q20"></p>
+    <p id="q21"></p>
+    <p id="q22"></p>
+    <p id="q23"></p>
+    <p id="q24"></p>
+    <p id="q25"></p>
+    <p id="q26"></p>
+    <p id="q27"></p>
+    <p id="q28"></p>
+    <p id="q29"></p>
+    <p id="q30"></p>
+
+    <script>
+
+
+        let numArr = [1, 2, 3, 4, 5];
+        function firstAndLast(arr) {
+            return [arr[0], arr.slice(arr.length - 1)];
+        }
+        document.getElementById("q1").innerHTML = "Q1 : " + firstAndLast(numArr);
+
+
+        numArr = [1, 2, 3, 4, 5];
+        function removeMiddle(arr) {
+            if (arr.length % 2 === 0) {
+                arr.splice(arr.length / 2, 1);
+            } else {
+                arr.splice(Math.floor((arr.length - 1) / 2), 1);
+            }
+            return arr;
+        }
+        document.getElementById("q2").innerHTML = "Q2 : " + removeMiddle(numArr);
+
+        numArr = [1, 2, 3, 4, 5];
+        function swapFirsLast(arr) {
+            var last = arr[arr.length - 1];
+            arr[arr.length - 1] = arr[0];
+            arr[0] = last;
+            return arr;
+        }
+        document.getElementById("q3").innerHTML = "Q3 : " + swapFirsLast(numArr);
+
+        numArr = [1, 2, 3, 4];
+        var num = 10;
+        function insertAtMiddle(arr, num) {
+            if (arr.length % 2 === 0) {
+                arr.splice(arr.length / 2, 0, num);
+            } else {
+                arr.splice(Math.floor((arr.length - 1) / 2), 0, num);
+            }
+            return arr;
+        }
+        document.getElementById("q4").innerHTML = "Q4 : " + insertAtMiddle(numArr, num);
+
+
+        numArr = [1, 2, 3];
+        function duplicateArray(arr) {
+            return arr.concat(arr);
+        }
+        document.getElementById("q5").innerHTML = "Q5 : " + duplicateArray(numArr);
+
+
+        numArr = [1, 2, 2, 3, 4, 4, 5];
+        function removeDuplicate(arr) {
+            var newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!newArr.includes(arr[i])) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        document.getElementById("q6").innerHTML = "Q6 : " + removeDuplicate(numArr);
+
+        numArr = [4, 9, 2, 10, 6];
+        function findSecondLargest(arr) {
+            arr.sort((a, b) => b - a);
+            return arr[1];
+        }
+        document.getElementById("q7").innerHTML = "Q7 : " + findSecondLargest(numArr);
+
+        numArr = [4, 9, 2, 10, 6];
+        function findSecondSmallest(arr) {
+            arr.sort((a, b) => b - a);
+            return arr[arr.length - 2];
+        }
+        document.getElementById("q8").innerHTML = "Q8 : " + findSecondSmallest(numArr);
+
+        numArr = [10, 5, 20, 3, 8];
+        function removeGreaterThan(arr, num) {
+            return arr.filter(i => i <= num);
+        }
+        document.getElementById("q9").innerHTML = "Q9 : " + removeGreaterThan(numArr, 10);
+
+        numArr = [10, 5, 20, 3, 8];
+        function removeLessThan(arr, num) {
+            return arr.filter(i => i >= num);
+        }
+        document.getElementById("q10").innerHTML = "Q10 : " + removeLessThan(numArr, 10);
+
+        numArr = [1, 2, 3, 2, 4, 2];
+        function countOccurrences(arr, num) {
+            arr.filter(i => i === num);
+            return arr.filter(i => i === num).length;
+        }
+        document.getElementById("q11").innerHTML = "Q11 : " + countOccurrences(numArr, 2);
+
+        numArr = [1, 2, 3, 4];
+        var numArr2 = [3, 4, 5, 6];
+        function arrayIntersection(arr, arr2) {
+            return arr.filter(x => arr2.includes(x));
+        }
+        document.getElementById("q12").innerHTML = "Q12 : " + arrayIntersection(numArr, numArr2);
+
+
+        numArr = [1, 2, 3, 4];
+        var numArr2 = [3, 4];
+        function arrayDifference(arr, arr2) {
+            return arr.filter(x => !arr2.includes(x));
+        }
+        document.getElementById("q13").innerHTML = "Q13 : " + arrayDifference(numArr, numArr2);
+
+        numArr = [1, 2, 3];
+        numArr2 = [3, 4, 5];
+        function uniqueMerge(arr, arr2) {
+            newArr = arr.concat(arr2);
+            newArr2 = [];
+            for (let i = 0; i < newArr.length; i++) {
+                if (!newArr2.includes(newArr[i])) {
+                    newArr2.push(newArr[i]);
+                }
+            }
+
+            return newArr2;
+        }
+        document.getElementById("q14").innerHTML = "Q14 : " + uniqueMerge(numArr, numArr2);
+
+        numArr = [5, -2, 10, -3, 7];
+        function removeNegativeNumbers(arr) {
+            return arr.filter(i => i >= 0);
+        }
+        document.getElementById("q15").innerHTML = "Q15 : " + removeNegativeNumbers(numArr);
+
+        var textArr = ["alex", "mohammad", "ali", "sara"];
+        function wordsLongerThan(arr, length) {
+            return arr.filter(x => x.length > length)
+        }
+        document.getElementById("q16").innerHTML = "Q16 : " + wordsLongerThan(textArr, 4);
+
+        var textArr = ["apple", "banana", "car", "dog"];
+        function countLetterInWords(arr, letter) {
+            return arr.filter(x => x.includes(letter)).length
+        }
+        document.getElementById("q17").innerHTML = "Q17 : " + countLetterInWords(textArr, "a");
+
+        var textArr = ["apple", "banana", "car", "dog"];
+        function removeShortWords(arr, length) {
+            return arr.filter(x => x.length > length)
+        }
+        document.getElementById("q18").innerHTML = "Q18 : " + removeShortWords(textArr, 3);
+
+        var textArr = ["alex", "mohammad", "ali", "sara"];
+        function findLongestWord(arr) {
+            arr.sort((x, y) => y.length - x.length)
+            return arr[0]
+        }
+
+        document.getElementById("q19").innerHTML = "Q19 : " + findLongestWord(textArr);
+
+        var textArr = ["alex", "mohammad", "ali", "sara"];
+        function findShortestWord(arr) {
+            arr.sort((x, y) => x.length - y.length)
+            return arr[0]
+        }
+
+        document.getElementById("q20").innerHTML = "Q20 : " + findShortestWord(textArr);
+
+        var textArr = ["apple", "hi", "banana"];
+        function sortByLength(arr) {
+            arr.sort((x, y) => x.length - y.length)
+            return arr
+        }
+        document.getElementById("q21").innerHTML = "Q21 : " + sortByLength(textArr);
+
+
+        numArr = [1, 2, 3, 4, 5, 6];
+        function removeEverySecond(arr) {
+            return arr.filter(x => x % 2 !== 0)
+        }
+        document.getElementById("q22").innerHTML = "Q22 : " + removeEverySecond(numArr);
+
+        numArr = [1, 2, 3, 4, 5, 6];
+        function sumEvenNumbers(arr) {
+            return arr.filter(x => x % 2 === 0).reduce((a, b) => a + b, 0);
+        }
+        document.getElementById("q23").innerHTML = "Q23 : " + sumEvenNumbers(numArr);
+
+        numArr = [1, 2, 3, 4, 5, 6];
+        function sumOddIndex(arr) {
+            return arr.filter((x, index) => index % 2 !== 0).reduce((a, b) => a + b, 0);
+        }
+        document.getElementById("q24").innerHTML = "Q24 : " + sumOddIndex(numArr);
+
+        numArr = [1, 2, 3, 4, 5, 6];
+        function reverseWithoutReverse(arr) {
+            var newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                newArr.unshift(arr[i]);
+            }
+            return newArr;
+        }
+        document.getElementById("q25").innerHTML = "Q25 : " + reverseWithoutReverse(numArr);
+
+        document.getElementById("q26").innerHTML = "Q26 : ";
+
+        document.getElementById("q27").innerHTML = "Q27 : ";
+
+        document.getElementById("q28").innerHTML = "Q28 : ";
+
+        document.getElementById("q29").innerHTML = "Q29 : ";
+
+        document.getElementById("q30").innerHTML = "Q30 : ";
+    </script>
+</body>
+
+</html>
