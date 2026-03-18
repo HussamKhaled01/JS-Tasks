@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Task - Array and Function Questions</title>
+</head>
+
+<body>
+    <p id="q1"></p>
+    <p id="q2"></p>
+    <p id="q3"></p>
+    <p id="q4"></p>
+    <p id="q5"></p>
+    <p id="q6"></p>
+    <p id="q7"></p>
+    <p id="q8"></p>
+    <p id="q9"></p>
+    <p id="q10"></p>
+
+
+    <script>
+        function doubleNumbers(arr) {
+            return arr.map(num => num * 2);
+        }
+        console.log(doubleNumbers([1, 2, 3]));
+
+        function numbersToStrings(arr) {
+            return arr.map(num => num.toString());
+        }
+        console.log(numbersToStrings([1, 2, 3]));
+
+        function upperCaseNames(arr) {
+            return arr.map(name => name.toUpperCase());
+        }
+        console.log(upperCaseNames(["john", "jane", "doe"]));
+
+        function addFive(arr) {
+            return arr.map(num => num + 5);
+        }
+        console.log(addFive([10, 20, 30]));
+
+        function getNames(arr) {
+            return arr.map(obj => obj.name);
+        }
+        console.log(getNames([{ name: "john", age: 20 }, { name: "jane", age: 25 }, { name: "doe", age: 30 }]));
+
+        function wordLengths(arr) {
+            return arr.map(word => word.length);
+        }
+        console.log(wordLengths(["apple", "dog"]));
+
+        function valTimesIndex(arr) {
+            return arr.map(num => num * arr.indexOf(num));
+        }
+        console.log(valTimesIndex([2, 3, 4]));
+
+        function makeUsernames(arr) {
+            return arr.map(obj => "@" + obj.username);
+        }
+        console.log(makeUsernames([{ username: "ahmad" }, { username: "sara" }]));
+
+        function squareNumbers(arr) {
+            return arr.map(num => num * num);
+        }
+        console.log(squareNumbers([2, 3, 4]));
+
+        function firstLetters(arr) {
+            return arr.map(word => word[0]);
+        }
+        console.log(firstLetters(["Ali", "Sara"]));
+
+        let sum = 0;
+        function sumNumbers(arr) {
+            arr.forEach(element => {
+                sum += element;
+            });
+            return sum;
+        }
+        console.log(sumNumbers([10, 20, 30]));
+
+        let countE = 0;
+        function countEven(arr) {
+            arr.forEach(element => {
+                if (element % 2 === 0) {
+                    countE++;
+                }
+            })
+            return countE;
+        }
+        console.log(countEven([1, 2, 3, 4]));
+
+        function timesTen(arr) {
+            return arr.map(num => num * 10);
+        }
+        console.log(timesTen([1, 2, 3]));
+
+        function addAdult(arr) {
+            return arr.map(obj => obj.age >= 18 ? { ...obj, adult: true } : { ...obj, adult: false });
+        }
+        console.log(addAdult([{ name: "Ali", age: 20 }, { name: "Sara", age: 15 }]));
+
+        function addTax(arr) {
+            return arr.map(num => num + 10)
+        }
+        console.log(addTax([100, 200]));
+
+        let counter = 0;
+        function countBig(arr) {
+            arr.forEach(element => {
+                if (element > 50) {
+                    counter++;
+                }
+            })
+            return counter;
+        }
+        console.log(countBig([20, 60, 80]));
+
+        function labelNumbers(arr) {
+            return arr.map(num => "Number: " + num.toString())
+        }
+        console.log(labelNumbers([5, 10]));
+
+        function productNames(arr) {
+            return arr.map(obj => obj.product)
+        }
+        console.log(productNames([{ product: "Laptop", price: 1000 }, { product: "Phone", price: 500 }]))
+
+        function addIndex(arr) {
+            return arr.map((x, index) => x + index)
+        }
+        console.log(addIndex([5, 5, 5]));
+
+        function isEvenArray(arr) {
+            return arr.map(num => num % 2 === 0 ? true : false)
+        }
+        console.log(isEvenArray([1,2,3,4]))
+    </script>
+</body>
+
+</html>
