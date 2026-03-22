@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 1</title>
+</head>
+
+<body>
+    <script>
+        let op = prompt("Enter operation (+, -, *, /):");
+        let num1 = Number(prompt("Enter first number:"));
+        let num2 = Number(prompt("Enter second number:"));
+
+        let result;
+        if (op === "+") {
+            result = num1 + num2;
+        } else if (op === "-") {
+            result = num1 - num2;
+        } else if (op === "*") {
+            result = num1 * num2;
+        } else if (op === "/") {
+            result = num1 / num2;
+        }
+
+        let output = num1 + " " + op + " " + num2 + " = " + result;
+
+        console.log(output);
+        document.write(output);
+    </script>
+</body>
+
+</html>

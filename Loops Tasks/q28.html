@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 28</title>
+</head>
+
+<body>
+
+    <p id="q28"></p>
+
+    <script>
+        let text = "";
+
+        for (let i = 10; i <= 500; i++) {
+            if (i < 100) {
+                let tens = Math.floor(i / 10);
+                let ones = i % 10;
+
+                if (tens < ones) {
+                    text += i + "<br>";
+                }
+            } else {
+                let hundreds = Math.floor(i / 100);
+                let tens = Math.floor((i % 100) / 10);
+                let ones = i % 10;
+
+                if (hundreds < tens && tens < ones) {
+                    text += i + "<br>";
+                }
+            }
+        }
+
+        document.getElementById("q28").innerHTML = text;
+    </script>
+
+</body>
+
+</html>

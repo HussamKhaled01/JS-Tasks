@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 7</title>
+</head>
+
+<body>
+
+    <p id="q7"></p>
+
+    <script>
+
+        let i = 0;
+        let j = 0;
+        let text = "";
+
+
+
+        for (let i = 1; i <= 5; i++) {
+
+            for (let j = 1; j <= 5; j++) {
+
+                if (j === i) {
+                    text += i + "&nbsp;&nbsp;";
+                }
+                else{
+                    text +=  "0&nbsp;&nbsp;";
+                }
+            }
+            text += "<br>";
+
+        }
+
+        document.getElementById("q7").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

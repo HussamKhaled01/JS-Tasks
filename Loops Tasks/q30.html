@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 30</title>
+</head>
+
+<body>
+
+    <p id="q30"></p>
+
+    <script>
+        let text = "";
+
+        for (let i = 100; i <= 300; i++) {
+
+            let hundreds = Math.floor(i / 100);
+            let tens = Math.floor((i % 100) / 10);
+            let ones = i % 10;
+
+            if (ones === (hundreds + tens)) {
+                text += i + "<br>";
+            }
+
+        }
+
+        document.getElementById("q30").innerHTML = text;
+    </script>
+
+</body>
+
+</html>

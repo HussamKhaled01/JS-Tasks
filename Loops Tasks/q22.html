@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 22</title>
+</head>
+
+<body>
+
+    <p id="q22"></p>
+
+    <script>
+
+        let i = 0;
+        let text = "";
+        let number = "";
+        let firstDigit = 0;
+        let lastDigit = 0;
+
+        for (let i = 2; i < 100; i++) {
+            let number = i;
+
+            firstDigit = Math.floor(number / 10);
+            lastDigit = number % 10;
+
+            if(firstDigit > lastDigit && firstDigit !== lastDigit){
+                text += i + "<br>";
+            }         
+           
+        }
+
+        document.getElementById("q22").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 8</title>
+</head>
+
+<body>
+    <script>
+        let age = Number(prompt("Enter your age:"));
+
+        let category;
+
+        if (age < 13) {
+            category = "Child";
+        } else if (age >= 13 && age <= 19) {
+            category = "Teenager";
+        } else if (age >= 20 && age <= 59) {
+            category = "Adult";
+        } else if (age >= 60) {
+            category = "Senior";
+        }
+
+        if (category === "Adult") {
+            alert("You are an " + category);
+            console.log("You are an " + category);
+        } else {
+            alert("You are a " + category);
+            console.log("You are a " + category);
+        }
+    </script>
+</body>
+
+</html>

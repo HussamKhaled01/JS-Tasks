@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 11</title>
+</head>
+
+<body>
+
+    <p id="q11"></p>
+
+    <script>
+
+        let i = 0;
+        let j = 0;
+        let text = "";
+
+
+        text += "<table border='0' cellpadding='5' width='50%'>";
+
+        for (let i = 1; i < 6; i++) {
+            text += "<tr>"
+            for (let j = 1; j < 6; j++) {
+                text += "<td>" + i + " * " + j + " = " + (i * j) + "</td>"
+            }
+            text += "</tr>"
+        }
+        text += "</table>";
+
+        document.getElementById("q11").innerHTML = text;
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 21</title>
+</head>
+
+<body>
+
+    <p id="q21"></p>
+
+    <script>
+
+        let i = 0;
+        let text = "";
+        let number = "";
+        let sum = 0;       
+
+        for (let i = 1; i <= 200; i++) {
+            let number = i;
+
+
+
+            while (number > 0) {
+                let digit = number % 10;
+                sum += digit;
+                number = Math.floor(number / 10);
+
+            }
+
+            if (sum === 5) {
+                text += i + "<br>";
+            }
+            sum = 0;
+
+        }
+
+        document.getElementById("q21").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

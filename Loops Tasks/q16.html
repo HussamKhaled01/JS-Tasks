@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 16</title>
+</head>
+
+<body>
+
+    <p id="q16"></p>
+
+    <script>
+
+        let i = 0;
+        let text = "";
+
+
+
+        for (let i = 1; i < 31; i++) {
+
+            if (i % 3 === 0 && i % 5 === 0) {
+                text += "FizzBuzz" + "&nbsp;&nbsp;";
+            }
+            else if (i % 3 === 0) {
+                text += "Fizz" + "&nbsp;&nbsp;";
+            }
+            else if (i % 5 === 0) {
+                text += "Buzz" + "&nbsp;&nbsp;";
+            }
+
+            else {
+                text += i + "&nbsp;&nbsp;";
+            }
+        }
+
+        document.getElementById("q16").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

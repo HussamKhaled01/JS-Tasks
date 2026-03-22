@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 12</title>
+</head>
+
+<body>
+
+    <p id="q12"></p>
+
+    <script>
+
+        let i = 0;
+        let j = 0;
+        let text = "";
+        let counter =0;
+
+
+
+        for (let i = 1; i < 6; i++) {
+
+            for (let j = 0; j < i; j++) {
+                counter++;
+                text += counter + "&nbsp;";
+            }
+
+            text += "<br>";
+
+        }
+
+        document.getElementById("q12").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

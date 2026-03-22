@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 25</title>
+</head>
+
+<body>
+
+    <p id="q25"></p>
+
+    <script>
+
+        let i = 0;
+        let text = "";
+        let number = "";
+        let firstDigit = 0;
+        let lastDigit = 0;
+        let divSum = 0;
+        let sum = 0;
+
+        for (let i = 1; i < 100; i++) {
+            let number = i;
+
+            firstDigit = Math.floor(number / 10);
+            lastDigit = number % 10;
+            divSum = firstDigit * lastDigit;
+            sum = firstDigit + lastDigit
+
+            if (divSum === sum) {
+                text += i + "<br>";
+            }
+        }
+
+        document.getElementById("q25").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

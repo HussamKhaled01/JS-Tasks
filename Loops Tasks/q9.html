@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 9</title>
+</head>
+
+<body>
+
+    <p id="q9"></p>
+
+    <script>
+        let text = "";
+        let lastNumber = 0;
+        let beforeLastNumber = 0;
+        sum = 0;
+
+        for (let i = 0; i < 10; i++) {
+            if (i === 0) {
+                text += i + "&nbsp;";
+                beforeLastNumber = 0;
+            }
+            else if (i === 1) {
+                text += i + "&nbsp;";
+                lastNumber = 1;
+            }
+            else {
+                sum = beforeLastNumber + lastNumber;
+                beforeLastNumber = lastNumber;
+                lastNumber = sum;
+                text += sum + "&nbsp;";
+            }
+
+
+        }
+
+        document.getElementById("q9").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>

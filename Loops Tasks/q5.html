@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript Task - Question 5</title>
+</head>
+
+<body>
+
+    <p id="q5"></p>
+
+    <script>
+
+        let text = "";
+
+        for (let i = 1; i <= 5; i++) {
+
+            for (let j = 1; j <= 5; j++) {
+                if (i === 1) {
+                    text += "A" + " ";
+                }
+                else if (i === 2) {
+                    if (j <= 3) {
+                        text += "A" + " ";
+                    }
+                    else {
+                        text += "B" + " ";
+                    }
+                }
+                else if (i === 3) {
+                    if (j <= 2) {
+                        text += "A" + " ";
+                    }
+                    else {
+                        text += "C" + " ";
+                    }
+                }
+                else if (i === 4) {
+                    if (j <= 1) {
+                        text += "A" + " ";
+                    }
+                    else {
+                        text += "D" + " ";
+                    }
+                }
+                else {
+                    text += "E" + " ";
+                }
+
+            }
+
+            text += "<br>";
+        }
+
+        document.getElementById("q5").innerHTML = text;
+    </script>
+
+
+
+</body>
+
+</html>
