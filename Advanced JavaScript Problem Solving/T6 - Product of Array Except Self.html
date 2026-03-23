@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let numbers = [1, 2, 3, 4];
+        let subArr = [];
+        let excludedIndex;
+        let sum;
+
+        for (let i = 0; i < numbers.length; i++) {
+            excludedIndex = i;
+            sum = 1;
+
+            for (j = 0; j < numbers.length; j++) {
+                if (j === excludedIndex) {
+                    continue;
+                }
+                else {
+                    sum *= numbers[j];
+                }
+            }
+            subArr.push(sum);
+        }
+
+        console.log(subArr);
+
+        // Done
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        let numbersArr = [1, 2, 2, 3, 1, 2, 3]
+        let checkNumbers = []
+        let smallestSubArr = []
+        let minLength = Infinity
+        let startingIndex
+        let endingIndex
+        let allNumbersExist = false
+        let existNumber = false
+
+        for (let i = 0; i < numbersArr.length; i++) {
+            existNumber = false
+
+            if (checkNumbers.length !== 0) {
+                for (let j = 0; j < checkNumbers.length; j++) {
+                    if (numbersArr[i] === checkNumbers[j]) {
+                        existNumber = true;
+                        break;
+                    }
+                }
+                if (existNumber === false) {
+                    checkNumbers.push(numbersArr[i])
+                }
+            }
+            else {
+                checkNumbers.push(numbersArr[i])
+            }
+        }
+
+
+        for (let start = 0; start < numbersArr.length; start++) {
+
+            let tempCheck = [...checkNumbers];
+
+            for (let i = start; i < numbersArr.length; i++) {
+
+                if (tempCheck.indexOf(numbersArr[i]) !== -1) {
+                    tempCheck[tempCheck.indexOf(numbersArr[i])] = 0;
+                }
+
+                allNumbersExist = true;
+
+                for (let j = 0; j < tempCheck.length; j++) {
+                    if (tempCheck[j] !== 0) {
+                        allNumbersExist = false;
+                        break;
+                    }
+                }
+
+                if (allNumbersExist === true) {
+
+                    let length = i - start + 1;
+
+                    if (length < minLength) {
+                        minLength = length;
+                        startingIndex = start;
+                        endingIndex = i;
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        for (let k = startingIndex; k <= endingIndex; k++) {
+            smallestSubArr.push(numbersArr[k]);
+        }
+
+        console.log(smallestSubArr);
+
+        // Done
+    </script>
+
+</body>
+
+</html>

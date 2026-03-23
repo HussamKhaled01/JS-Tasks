@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let stockPrices = [7, 1, 5, 3, 6, 4];
+        let minPrice = stockPrices[0];
+        let maxProfit = 0;
+
+        for (let i = 1; i < stockPrices.length; i++) {
+
+            if (stockPrices[i] < minPrice) {
+                minPrice = stockPrices[i];
+            }
+            if (stockPrices[i] - minPrice > maxProfit) {
+                maxProfit = stockPrices[i] - minPrice;
+            }
+        }
+
+        console.log("Min Price: " + minPrice + " / " + "Max Profit: " + maxProfit);
+
+        // Done
+    </script>
+
+</body>
+
+</html>

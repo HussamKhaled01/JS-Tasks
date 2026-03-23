@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let browsingLog = [1, 2, 3, 1, 2, 3, 4, 5];
+        let num;
+        let startIndex;
+        let endIndex;
+        let subArr = [];
+
+
+        for (let start = 0; start < browsingLog.length; start++) {
+
+            num = browsingLog[start];
+            startIndex = start;
+            let foundDuplicate = false;
+
+            if (browsingLog[start] === num) {
+
+                for (let i = start + 1; i < browsingLog.length; i++) {
+                    if (browsingLog[i] === num) {
+                        endIndex = i - 1;
+                        foundDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (!foundDuplicate) {
+                    endIndex = browsingLog.length - 1;
+                }
+
+                let length = endIndex - startIndex + 1;
+
+                if (length > subArr.length) {
+                    subArr = [];
+                    for (let k = startIndex; k <= endIndex; k++) {
+                        subArr.push(browsingLog[k]);
+                    }
+                }
+            }
+        }
+
+        console.log(subArr);
+
+        // Done
+
+    </script>
+
+</body>
+
+</html>

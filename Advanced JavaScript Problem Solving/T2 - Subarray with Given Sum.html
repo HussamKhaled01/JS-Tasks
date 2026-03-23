@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let dailyExpenses = [1, 4, 20, 3, 10, 5];
+        let target = 33;
+        let startIndex = 0;
+        let EndIndex = dailyExpenses.length - 1;
+
+        let subArr = [];
+
+
+        for (let start = 0; start < dailyExpenses.length; start++) {
+            let sum = 0;
+            startIndex = start;
+            EndIndex = dailyExpenses.length - 1;
+
+            for (let i = start; i < dailyExpenses.length; i++) {
+                sum += dailyExpenses[i];
+
+                if (sum > target) {
+                    break;
+                }
+
+                if (sum === target) {
+                    EndIndex = i;
+                    break;
+                }
+            }
+
+            if (sum === target) {
+                for (let j = startIndex; j <= EndIndex; j++) {
+                    subArr.push(dailyExpenses[j]);
+                }
+
+                break;
+            }
+
+        }
+
+        console.log("Start: " + startIndex + " / " + " End: " + EndIndex + "  / " + " Sub Array: " + subArr);
+
+        // Done
+    </script>
+
+</body>
+
+</html>

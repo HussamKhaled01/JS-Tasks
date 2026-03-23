@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let systemLogs = [
+            { event: "click", time: 1 },
+            { event: "click", time: 2 },
+            { event: "scroll", time: 3 },
+            { event: "scroll", time: 4 },
+            { event: "click", time: 5 }
+        ];
+
+        let compressedLogs = [];
+        let eventName = systemLogs[0].event;
+        let eventCount = 1;
+
+        for (let i = 1; i < systemLogs.length; i++) {
+
+            if (systemLogs[i].event === eventName) {
+                eventCount++;
+            }
+            else {
+                compressedLogs.push({ event: eventName, count: eventCount });
+                eventName = systemLogs[i].event;
+                eventCount = 0;
+                eventCount++;
+            }
+
+            if (i === systemLogs.length - 1) {
+                compressedLogs.push({ event: eventName, count: eventCount });
+            }
+
+        }
+
+        console.log(compressedLogs);
+
+        // Done
+    </script>
+
+</body>
+
+</html>

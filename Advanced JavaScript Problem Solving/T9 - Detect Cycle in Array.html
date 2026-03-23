@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+    <script>
+        let positions = [2, -1, 1, 2, 2];
+        let lastIndex;
+        let jump = 0;
+
+        for (i = 0; i < positions.length; i = jump) {
+            lastIndex = i;
+            jump += positions[i];
+
+            if (jump < positions.length - 1) {
+                if (lastIndex === jump + positions[jump]) {
+                    console.log("There is cycle");
+                    break;
+                }
+            }
+            else if (jump > positions.length - 1) {
+                console.log("There is no cycle");
+                break;
+            }
+        }
+
+        // Done
+
+    </script>
+
+</body>
+
+</html>

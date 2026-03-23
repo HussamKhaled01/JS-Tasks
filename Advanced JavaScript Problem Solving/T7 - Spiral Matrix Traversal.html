@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        let matrixArr = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        let newArr = []
+        let num
+
+        for (let i = 0; i <= 2; i++) {
+            if (i === 0) {
+                for (let j = 0; j <= matrixArr[i].length - 1; j++) {
+                    newArr.push(matrixArr[i][j])
+                }
+                num = matrixArr[i][matrixArr[i].length - 1]
+            }
+            else if (i === 1 && newArr[newArr.length - 1] === num) {
+                newArr.push(matrixArr[i][matrixArr[1].length - 1])
+                num = matrixArr[i][matrixArr[1].length - 1]
+            }
+            else if (i === 2) {
+                if (newArr[newArr.length - 1] === num) {
+                    for (let j = matrixArr[i].length - 1; j >= 0; j--) {
+                        newArr.push(matrixArr[i][j])
+                        if (j === 0) {
+                            num = matrixArr[i][j]
+                        }
+                    }
+                }
+                if (newArr[newArr.length - 1] === num) {
+                    for (let j = 0; j <= matrixArr[i - 1].length - 2; j++) {
+                        newArr.push(matrixArr[i - 1][j])
+                    }
+                }
+            }
+        }
+
+        console.log(newArr)
+
+        //Done cant increase the rows just columns 
+    </script>
+
+
+</body>
+
+</html>
