@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Task 1: Structure Analysis</title>
+    <title>Structure Analysis</title>
 </head>
 
 <body>
@@ -14,16 +14,14 @@
     </div>
 
     <script>
-        const box = document.getElementById('my-box');
-        const target = document.getElementById('target');
+        const box = document.querySelector('#my-box');
+        const target = document.querySelector('#target');
 
-        console.log("All children:", box.children);
-
-        console.log("First child:", box.firstElementChild);
-        console.log("Last child:", box.lastElementChild);
-
-        console.log("Previous neighbor:", target.previousElementSibling);
-        console.log("Next neighbor:", target.nextElementSibling);
+        console.log(box.children);
+        console.log(box.firstElementChild);
+        console.log(box.lastElementChild);
+        console.log(target.previousElementSibling);
+        console.log(target.nextElementSibling);
     </script>
 </body>
 

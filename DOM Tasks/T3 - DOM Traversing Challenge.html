@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Task 3: Traversing Challenge</title>
+    <title>Traversing Challenge</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,12 +22,10 @@
 
     <script>
         const wrapper = document.getElementById('main-wrapper');
-
-        const list = wrapper.children[0];
-
+        const list = wrapper.firstElementChild;
         const thirdItem = list.children[2];
 
-        thirdItem.style.color = "red";
+        thirdItem.classList.add('highlight');
         thirdItem.textContent = "I was found by traversing!";
     </script>
 </body>
