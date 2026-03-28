@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 80px 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 50%;
+            background-color: white;
+            border-radius: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(to right, #1e6fd9, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        form {
+            padding: 40px 50px;
+        }
+
+        .row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #4b5563;
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-left: 2px;
+        }
+
+        input {
+            padding: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #374151;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #1e6fd9;
+        }
+
+        .error-span {
+            color: #b91c1c;
+            font-size: 13px;
+            margin-top: 7px;
+        }
+
+        .hint-span {
+            color: #b91c1c;
+            font-size: 13px;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #1e6fd9;
+            color: white;
+            border: none;
+            padding: 18px 0;
+            width: 65%;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(30, 111, 217, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #1a63c4;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            color: #4b5563;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <header>Registration Form</header>
+
+        <form id="infoForm">
+            <div class="row">
+                <div class="input-group">
+                    <label for="fName">First Name</label>
+                    <input type="text" name="fName" id="fName" placeholder="Enter your first name">
+                    <span class="error-span" id="error-fName"></span>
+                </div>
+                <div class="input-group">
+                    <label for="lName">Last Name</label>
+                    <input type="text" name="lName" id="lName" placeholder="Enter your last name">
+                    <span class="error-span" id="error-lName"></span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob">
+                <span class="error-span" id="error-dob"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email">
+                <br>
+                <input type="email" name="confirmEmail" id="confirmEmail" placeholder="Confirm Email">
+                <span class="error-span" id="error-confirmEmail"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password">
+                <span class="hint-span" id="error-password"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password">
+                <span class="error-span" id="error-confirmPassword"></span>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Register</button>
+                <span class="footer-text"></span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        const form = document.getElementById("infoForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            let isValid = true;
+
+            const errorFirst = document.getElementById("error-fName");
+            const errorLast = document.getElementById("error-lName");
+            const errorDob = document.getElementById("error-dob");
+            const errorEmail = document.getElementById("error-confirmEmail");
+            const errorPassword = document.getElementById("error-password");
+            const errorConfirmPassword = document.getElementById("error-confirmPassword");
+
+
+            const fName = formData.get("fName").trim();
+            const lName = formData.get("lName").trim();
+            const dob = formData.get("dob").trim();
+            const email = formData.get("email").trim();
+            const cEmail = formData.get("confirmEmail").trim();
+            const password = formData.get("password");;
+            const cPassword = formData.get("confirmPassword");
+
+
+
+            const namePattern = /^[A-Za-z]+$/;
+            const dobPattern = /^\d{4}-\d{2}-\d{2}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const passwordPattern = /^[A-Z](?=.*(?:\d.*){2,})(?=.*[!@#$%^&*(),.?":{}|<>]).{7,31}$/;
+
+            errorFirst.textContent = "";
+            errorLast.textContent = "";
+            errorDob.textContent = "";
+            errorEmail.textContent = "";
+            errorPassword.textContent = "";
+            errorConfirmPassword.textContent = "";
+
+
+            if (fName.length === 0) {
+                errorFirst.textContent = "First name is required.";
+                isValid = false;
+            }
+            else if (!namePattern.test(fName)) {
+                errorFirst.textContent = "Only letters.";
+                isValid = false;
+            }
+
+            if (lName.length === 0) {
+                errorLast.textContent = "Last name is required.";
+                isValid = false;
+            }
+            else if (!namePattern.test(lName)) {
+                errorLast.textContent = "Only letters.";
+                isValid = false;
+            }
+
+            if (dob.length === 0) {
+                errorDob.textContent = "Date of birth is required.";
+                isValid = false;
+            }
+            else if (!dobPattern.test(dob)) {
+                errorDob.textContent = "Please enter a valid date.";
+                isValid = false;
+            }
+
+            if (email.length === 0) {
+                errorEmail.textContent = "Email is required.";
+                isValid = false;
+            }
+            else if (!emailPattern.test(email)) {
+                errorEmail.textContent = "Please enter a valid email.";
+                isValid = false;
+            }
+            else if (email !== cEmail) {
+                errorEmail.textContent = "Emails do not match.";
+                isValid = false;
+            }
+
+            if (password.length === 0) {
+                errorPassword.textContent = "Password is required.";
+                isValid = false;
+            } else if (!passwordPattern.test(password)) {
+                errorPassword.textContent = "Password must start with an Capital letter, contain at least 2 numbers, at least 1 special character, and be between 8 and 32 characters characters.";
+                isValid = false;
+            }
+
+            if (cPassword.length === 0) {
+                errorConfirmPassword.textContent = "Please confirm your password.";
+                isValid = false;
+            } else if (cPassword !== password) {
+                errorConfirmPassword.textContent = "Passwords do not match.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Registration successful!");
+                form.reset();
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

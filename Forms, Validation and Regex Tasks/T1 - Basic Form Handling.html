@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basic Info Form</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            color: #333;
+        }
+
+        section {
+            width: 100%;
+            max-width: 500px;
+            background: transparent;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            width: 120px;
+            flex-shrink: 0;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            flex-grow: 1; 
+            box-sizing: border-box;
+        }
+
+        input::placeholder {
+            color: #bbb;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #1b78d1;
+            color: white;
+            border: none;
+            padding: 12px 0;
+            width: 200px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #155da3;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 40px 0 20px 0;
+        }
+
+        .data-display h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+
+        .data-row {
+            display: flex; 
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .data-label {
+            width: 120px; 
+            flex-shrink: 0;
+        }
+
+        .data-row span {
+            font-weight: normal;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>Basic Info Form</h1>
+
+        <form id="infoForm">
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+            </div>
+
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email">
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <hr>
+
+        <div class="data-display">
+            <h3>Submitted Data:</h3>
+            <div class="data-row">
+                <div class="data-label">First Name:</div>
+                <span id="disp-first"></span>
+            </div>
+            <div class="data-row">
+                <div class="data-label">Last Name:</div>
+                <span id="disp-last"></span>
+            </div>
+            <div class="data-row">
+                <div class="data-label">Email:</div>
+                <span id="disp-email"></span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById("infoForm");
+        const dispFirst = document.getElementById("disp-first");
+        const dispLast = document.getElementById("disp-last");
+        const dispEmail = document.getElementById("disp-email");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            const firstName = formData.get("firstName");
+            const lastName = formData.get("lastName");
+            const Email = formData.get("Email");
+
+            dispFirst.textContent = firstName;    
+            dispLast.textContent = lastName;  
+            dispEmail.textContent = Email;         
+        });
+    </script>
+
+</body>
+</html>
